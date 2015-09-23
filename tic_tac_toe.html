@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tic Tac Toe</title>
+  <script src="js/lib/jquery-1.11.3.min.js"></script>
+  <script src="js/lib/underscore-min.js"></script>
+  <link rel="stylesheet" href="./tic_tac_toe.css" type="text/css" />
+</head>
+<body>
+  <div class="board">
+    <!--
+       a0 | a1 | a2 | a3
+      ----+----+----+----
+       b0 | b1 | b2 | b3
+      ----+----+----+----
+       c0 | c1 | c2 | c3
+      ----+----+----+----
+       d0 | d1 | d2 | d3
+      ----+----+----+----
+    -->
+ <div class="board-outer" class="center">
+        <table class="board">
+            <tr class="row">
+                <td class="a0 h-b v-r"></td>
+                <td class="a1 h-b v-r"></td>
+                <td class="a2 h-b v-r"></td>
+                <td class="a3 h-b"></td>
+            </tr>
+            <tr class="row">
+                <td class="b0 h-b v-r"></td>
+                <td class="b1 h-b v-r"></td>
+                <td class="b2 h-b v-r"></td>
+                <td class="b3 h-b"></td>
+            </tr>
+            <tr class="row">
+                <td class="c0 h-b v-r"></td>
+                <td class="c1 h-b v-r"></td>
+                <td class="c2 h-b v-r"></td>
+                <td class="c3 h-b"></td>
+            </tr>
+            <tr class="row">
+                <td class="d0 v-r"></td>
+                <td class="d1 v-r"></td>
+                <td class="d2 v-r"></td>
+                <td class="d3"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="center button">
+        <button class="restart">New game</button>
+    </div>
+    <div class="score">
+      <div class="player-x"></div>
+      <div class="player-o"></div>
+    </div>
+ <script src="js/tic_tac_toe.js"></script>
+</body>
+
+</html>
