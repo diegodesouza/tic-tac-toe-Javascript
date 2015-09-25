@@ -1,12 +1,12 @@
 $(document).ready(function() {
   var letters = ['a', 'b', 'c', 'd'];
   var rows = [];
-  var rowCount = 4; var colCount = 4;
+  var rowCount = 4;
+  var colCount = 4;
   var maxTurns = rowCount * colCount;
   var playerX = 'x';
   var playerO = 'o';
   var turn = 0;
-  var playerXScore; playerOScore = 0;
 
   // when document first load
   // construct a0 a1 a2 a3 b0 ...
@@ -36,6 +36,24 @@ $(document).ready(function() {
     } else if(turn === maxTurns) {
       winAlert();
     }
+
+    // undo feature
+    //
+    // The Idea behind this is
+    // instantiate an array and push the moves into that array,
+    // get the last item of the array and set it equals to '' (empty string)
+    // then subtract the turns by one.
+
+    var playerMoves = [];
+    var playerMove = $(event.target.innerHTML);
+    playerMoves.push(playerMove);
+    lastMove = playerMoves.last;
+
+    $('.undo').on('click', function() {
+     // $(event.target.innerHTML = ""); #this would wipeout all the moves.
+     lastMove = "";
+      --turn;
+    });
   });
 
   var checkWin = function(checkPlayer) {
